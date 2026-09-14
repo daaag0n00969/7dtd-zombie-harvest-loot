@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs>
+	<!-- Base harvest for all human zombies (knife / butcher tools) -->
+	<append xpath="/entity_classes/entity_class[@name='zombieTemplateMale']">
+		<drop event="Harvest" name="foodRottingFlesh" count="0" tool_category="Butcher"/>
+		<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="6"/>
+		<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="2"/>
+		<drop event="Harvest" name="resourceCloth" tag="butcherHarvest" count="3"/>
+	</append>
+
+	<set xpath="/entity_classes/entity_class[@name='zombieTemplateMale']/property[@name='LootDropProb']/@value">.08</set>
+
+	<!-- Nurse / lab: medical supplies -->
+	<append xpath="/entity_classes/entity_class[@name='zombieNurse']">
+		<drop event="Harvest" name="medicalFirstAidBandage" tag="butcherHarvest" count="1" prob="0.22"/>
+		<drop event="Harvest" name="drugPainkillers" tag="butcherHarvest" count="1" prob="0.18"/>
+	</append>
+	<append xpath="/entity_classes/entity_class[@name='zombieLab']">
+		<drop event="Harvest" name="medicalFirstAidBandage" tag="butcherHarvest" count="1" prob="0.16"/>
+		<drop event="Harvest" name="drugPainkillers" tag="butcherHarvest" count="1" prob="0.14"/>
+	</append>
+
+	<!-- Workers / lumberjacks / janitor: tools -->
+	<append xpath="/entity_classes/entity_class[@name='zombieUtilityWorker']">
+		<drop event="Harvest" name="meleeToolRepairT1ClawHammer" tag="butcherHarvest" count="1" prob="0.10"/>
+		<drop event="Harvest" name="resourceNail" tag="butcherHarvest" count="4" prob="0.35"/>
+	</append>
+	<append xpath="/entity_classes/entity_class[@name='zombieLumberjack']">
+		<drop event="Harvest" name="meleeToolAxeT1IronFireaxe" tag="butcherHarvest" count="1" prob="0.10"/>
+		<drop event="Harvest" name="resourceWood" tag="butcherHarvest" count="8" prob="0.40"/>
+	</append>
+	<append xpath="/entity_classes/entity_class[@name='zombieJanitor']">
+		<drop event="Harvest" name="meleeToolRepairT1ClawHammer" tag="butcherHarvest" count="1" prob="0.08"/>
+		<drop event="Harvest" name="resourceCloth" tag="butcherHarvest" count="4" prob="0.45"/>
+	</append>
+
+	<!-- Military / cops: guns and ammo -->
+	<append xpath="/entity_classes/entity_class[@name='zombieSoldier']">
+		<drop event="Harvest" name="ammo9mmBulletBall" tag="butcherHarvest" count="6" prob="0.28"/>
+		<drop event="Harvest" name="gunHandgunT1Pistol" tag="butcherHarvest" count="1" prob="0.06"/>
+		<drop event="Harvest" name="clothingOutfitT2" tag="butcherHarvest" count="1" prob="0.08"/>
+	</append>
+	<append xpath="/entity_classes/entity_class[@name='zombieFatCop']">
+		<drop event="Harvest" name="ammo9mmBulletBall" tag="butcherHarvest" count="5" prob="0.30"/>
+		<drop event="Harvest" name="gunHandgunT1Pistol" tag="butcherHarvest" count="1" prob="0.07"/>
+	</append>
+
+	<!-- "Cool" / tougher zombies: extra cloth or clothing -->
+	<append xpath="/entity_classes/entity_class[@name='zombieBiker']">
+		<drop event="Harvest" name="clothingOutfitT1" tag="butcherHarvest" count="1" prob="0.12"/>
+		<drop event="Harvest" name="resourceCloth" tag="butcherHarvest" count="5" prob="0.50"/>
+	</append>
+	<append xpath="/entity_classes/entity_class[@name='zombieBowler']">
+		<drop event="Harvest" name="clothingOutfitT1" tag="butcherHarvest" count="1" prob="0.10"/>
+	</append>
+</configs>

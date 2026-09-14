@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<Name value="ZombieHarvestLoot" />
+	<DisplayName value="Zombie Harvest Loot" />
+	<Description value="Knife-harvest zombies for rotting flesh, fat, cloth, and job-themed loot." />
+	<Author value="daaag0n00969" />
+	<Version value="1.0.0" />
+	<Website value="https://github.com/daaag0n00969/7dtd-zombie-harvest-loot" />
+</xml>
