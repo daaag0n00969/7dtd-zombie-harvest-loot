@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs>
+	<!-- Extra items in the rare zombie loot bags (the pack that sometimes drops on death). -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupZpackNurseB']">
+		<item name="medicalFirstAidKit" loot_prob_template="low"/>
+		<item name="drugAntibiotics" loot_prob_template="veryLow"/>
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupZpackLab01']">
+		<item name="medicalFirstAidKit" loot_prob_template="veryLow"/>
+		<item name="drugAntibiotics" loot_prob_template="veryLow"/>
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupZpackUtility01']">
+		<item name="meleeToolRepairT1ClawHammer" loot_prob_template="low"/>
+		<item name="meleeToolAxeT1IronFireaxe" loot_prob_template="veryLow"/>
+		<item name="resourceNail" count="8,20" loot_prob_template="med"/>
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupZpackSoldier01']">
+		<item name="gunHandgunT1Pistol" loot_prob_template="veryLow"/>
+		<item name="ammo9mmBulletBall" count="7,15" loot_prob_template="med"/>
+		<item name="ammo762mmBulletBall" count="5,12" loot_prob_template="low"/>
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupZpackThug01']">
+		<item name="gunHandgunT1Pistol" loot_prob_template="veryLow"/>
+		<item name="ammo9mmBulletBall" count="5,12" loot_prob_template="low"/>
+		<item name="clothingOutfitT1" loot_prob_template="low"/>
+	</append>
+</configs>

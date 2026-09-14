@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configs>
-	<!-- Base harvest for all human zombies (knife / butcher tools) -->
+	<!-- Knife / butcher harvest for every human zombie (templates inherit to all variants). -->
 	<append xpath="/entity_classes/entity_class[@name='zombieTemplateMale']">
 		<drop event="Harvest" name="foodRottingFlesh" count="0" tool_category="Butcher"/>
 		<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="6"/>
@@ -12,45 +12,103 @@
 
 	<!-- Nurse / lab: medical supplies -->
 	<append xpath="/entity_classes/entity_class[@name='zombieNurse']">
-		<drop event="Harvest" name="medicalFirstAidBandage" tag="butcherHarvest" count="1" prob="0.22"/>
-		<drop event="Harvest" name="drugPainkillers" tag="butcherHarvest" count="1" prob="0.18"/>
+		<drop event="Harvest" name="medicalFirstAidBandage" tag="butcherHarvest" count="1" prob="0.28"/>
+		<drop event="Harvest" name="drugPainkillers" tag="butcherHarvest" count="1" prob="0.22"/>
+		<drop event="Harvest" name="medicalFirstAidKit" tag="butcherHarvest" count="1" prob="0.06"/>
+		<drop event="Harvest" name="drugAntibiotics" tag="butcherHarvest" count="1" prob="0.05"/>
 	</append>
 	<append xpath="/entity_classes/entity_class[@name='zombieLab']">
-		<drop event="Harvest" name="medicalFirstAidBandage" tag="butcherHarvest" count="1" prob="0.16"/>
-		<drop event="Harvest" name="drugPainkillers" tag="butcherHarvest" count="1" prob="0.14"/>
+		<drop event="Harvest" name="medicalFirstAidBandage" tag="butcherHarvest" count="1" prob="0.20"/>
+		<drop event="Harvest" name="drugPainkillers" tag="butcherHarvest" count="1" prob="0.16"/>
+		<drop event="Harvest" name="drugVitamins" tag="butcherHarvest" count="1" prob="0.18"/>
+		<drop event="Harvest" name="medicalFirstAidKit" tag="butcherHarvest" count="1" prob="0.05"/>
 	</append>
+	<append xpath="/entity_classes/entity_class[@name='zombieMaleHazmat']">
+		<drop event="Harvest" name="medicalFirstAidBandage" tag="butcherHarvest" count="1" prob="0.18"/>
+		<drop event="Harvest" name="drugPainkillers" tag="butcherHarvest" count="1" prob="0.14"/>
+		<drop event="Harvest" name="drugAntibiotics" tag="butcherHarvest" count="1" prob="0.08"/>
+	</append>
+	<set xpath="/entity_classes/entity_class[starts-with(@name,'zombieNurse')]/property[@name='LootDropProb']/@value">.12</set>
+	<set xpath="/entity_classes/entity_class[starts-with(@name,'zombieLab')]/property[@name='LootDropProb']/@value">.12</set>
+	<set xpath="/entity_classes/entity_class[starts-with(@name,'zombieMaleHazmat')]/property[@name='LootDropProb']/@value">.10</set>
 
-	<!-- Workers / lumberjacks / janitor: tools -->
+	<!-- Workers / lumberjacks / janitor / demolition / rancher: tools -->
 	<append xpath="/entity_classes/entity_class[@name='zombieUtilityWorker']">
-		<drop event="Harvest" name="meleeToolRepairT1ClawHammer" tag="butcherHarvest" count="1" prob="0.10"/>
-		<drop event="Harvest" name="resourceNail" tag="butcherHarvest" count="4" prob="0.35"/>
+		<drop event="Harvest" name="meleeToolRepairT1ClawHammer" tag="butcherHarvest" count="1" prob="0.12"/>
+		<drop event="Harvest" name="resourceNail" tag="butcherHarvest" count="6" prob="0.40"/>
+		<drop event="Harvest" name="resourceDuctTape" tag="butcherHarvest" count="1" prob="0.18"/>
+		<drop event="Harvest" name="resourceScrapIron" tag="butcherHarvest" count="4" prob="0.25"/>
 	</append>
 	<append xpath="/entity_classes/entity_class[@name='zombieLumberjack']">
-		<drop event="Harvest" name="meleeToolAxeT1IronFireaxe" tag="butcherHarvest" count="1" prob="0.10"/>
-		<drop event="Harvest" name="resourceWood" tag="butcherHarvest" count="8" prob="0.40"/>
+		<drop event="Harvest" name="meleeToolAxeT1IronFireaxe" tag="butcherHarvest" count="1" prob="0.12"/>
+		<drop event="Harvest" name="resourceWood" tag="butcherHarvest" count="10" prob="0.45"/>
+		<drop event="Harvest" name="meleeWpnBladeT1HuntingKnife" tag="butcherHarvest" count="1" prob="0.08"/>
 	</append>
 	<append xpath="/entity_classes/entity_class[@name='zombieJanitor']">
-		<drop event="Harvest" name="meleeToolRepairT1ClawHammer" tag="butcherHarvest" count="1" prob="0.08"/>
-		<drop event="Harvest" name="resourceCloth" tag="butcherHarvest" count="4" prob="0.45"/>
+		<drop event="Harvest" name="meleeToolRepairT1ClawHammer" tag="butcherHarvest" count="1" prob="0.10"/>
+		<drop event="Harvest" name="resourceCloth" tag="butcherHarvest" count="5" prob="0.50"/>
+		<drop event="Harvest" name="resourceDuctTape" tag="butcherHarvest" count="1" prob="0.16"/>
 	</append>
+	<append xpath="/entity_classes/entity_class[@name='zombieDemolition']">
+		<drop event="Harvest" name="meleeToolRepairT1ClawHammer" tag="butcherHarvest" count="1" prob="0.10"/>
+		<drop event="Harvest" name="resourceNail" tag="butcherHarvest" count="8" prob="0.35"/>
+		<drop event="Harvest" name="resourceScrapIron" tag="butcherHarvest" count="6" prob="0.30"/>
+	</append>
+	<append xpath="/entity_classes/entity_class[@name='zombieRancher']">
+		<drop event="Harvest" name="meleeWpnBladeT1HuntingKnife" tag="butcherHarvest" count="1" prob="0.10"/>
+		<drop event="Harvest" name="resourceCloth" tag="butcherHarvest" count="4" prob="0.35"/>
+		<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="3" prob="0.40"/>
+	</append>
+	<set xpath="/entity_classes/entity_class[starts-with(@name,'zombieUtilityWorker')]/property[@name='LootDropProb']/@value">.12</set>
+	<set xpath="/entity_classes/entity_class[starts-with(@name,'zombieLumberjack')]/property[@name='LootDropProb']/@value">.12</set>
+	<set xpath="/entity_classes/entity_class[starts-with(@name,'zombieJanitor')]/property[@name='LootDropProb']/@value">.10</set>
 
 	<!-- Military / cops: guns and ammo -->
 	<append xpath="/entity_classes/entity_class[@name='zombieSoldier']">
-		<drop event="Harvest" name="ammo9mmBulletBall" tag="butcherHarvest" count="6" prob="0.28"/>
-		<drop event="Harvest" name="gunHandgunT1Pistol" tag="butcherHarvest" count="1" prob="0.06"/>
-		<drop event="Harvest" name="clothingOutfitT2" tag="butcherHarvest" count="1" prob="0.08"/>
+		<drop event="Harvest" name="ammo9mmBulletBall" tag="butcherHarvest" count="7" prob="0.35"/>
+		<drop event="Harvest" name="ammo762mmBulletBall" tag="butcherHarvest" count="5" prob="0.18"/>
+		<drop event="Harvest" name="gunHandgunT1Pistol" tag="butcherHarvest" count="1" prob="0.07"/>
+		<drop event="Harvest" name="clothingOutfitT2" tag="butcherHarvest" count="1" prob="0.10"/>
 	</append>
 	<append xpath="/entity_classes/entity_class[@name='zombieFatCop']">
-		<drop event="Harvest" name="ammo9mmBulletBall" tag="butcherHarvest" count="5" prob="0.30"/>
-		<drop event="Harvest" name="gunHandgunT1Pistol" tag="butcherHarvest" count="1" prob="0.07"/>
+		<drop event="Harvest" name="ammo9mmBulletBall" tag="butcherHarvest" count="6" prob="0.38"/>
+		<drop event="Harvest" name="ammoShotgunShell" tag="butcherHarvest" count="4" prob="0.16"/>
+		<drop event="Harvest" name="gunHandgunT1Pistol" tag="butcherHarvest" count="1" prob="0.08"/>
+		<drop event="Harvest" name="gunShotgunT0PipeShotgun" tag="butcherHarvest" count="1" prob="0.04"/>
+		<drop event="Harvest" name="clothingOutfitT2" tag="butcherHarvest" count="1" prob="0.08"/>
 	</append>
+	<set xpath="/entity_classes/entity_class[starts-with(@name,'zombieSoldier')]/property[@name='LootDropProb']/@value">.14</set>
+	<set xpath="/entity_classes/entity_class[starts-with(@name,'zombieFatCop')]/property[@name='LootDropProb']/@value">.14</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieFatCop']/property[@name='LootDropEntityClass']/@value">EntityLootContainerSoldier</set>
 
-	<!-- "Cool" / tougher zombies: extra cloth or clothing -->
+	<!-- "Cool" / tougher dressed zombies: extra cloth or clothing -->
 	<append xpath="/entity_classes/entity_class[@name='zombieBiker']">
-		<drop event="Harvest" name="clothingOutfitT1" tag="butcherHarvest" count="1" prob="0.12"/>
-		<drop event="Harvest" name="resourceCloth" tag="butcherHarvest" count="5" prob="0.50"/>
+		<drop event="Harvest" name="clothingOutfitT1" tag="butcherHarvest" count="1" prob="0.16"/>
+		<drop event="Harvest" name="resourceCloth" tag="butcherHarvest" count="6" prob="0.55"/>
+		<drop event="Harvest" name="ammoShotgunShell" tag="butcherHarvest" count="3" prob="0.12"/>
 	</append>
 	<append xpath="/entity_classes/entity_class[@name='zombieBowler']">
+		<drop event="Harvest" name="clothingOutfitT1" tag="butcherHarvest" count="1" prob="0.12"/>
+		<drop event="Harvest" name="resourceCloth" tag="butcherHarvest" count="4" prob="0.40"/>
+	</append>
+	<append xpath="/entity_classes/entity_class[@name='zombieBusinessMan']">
+		<drop event="Harvest" name="clothingOutfitT1" tag="butcherHarvest" count="1" prob="0.14"/>
+		<drop event="Harvest" name="oldCash" tag="butcherHarvest" count="25" prob="0.30"/>
+	</append>
+	<append xpath="/entity_classes/entity_class[@name='zombiePartyGirl']">
+		<drop event="Harvest" name="clothingOutfitT1" tag="butcherHarvest" count="1" prob="0.14"/>
+		<drop event="Harvest" name="resourceCloth" tag="butcherHarvest" count="5" prob="0.45"/>
+	</append>
+	<append xpath="/entity_classes/entity_class[@name='zombieSkateboarder']">
+		<drop event="Harvest" name="clothingOutfitT1" tag="butcherHarvest" count="1" prob="0.12"/>
+		<drop event="Harvest" name="resourceCloth" tag="butcherHarvest" count="4" prob="0.40"/>
+	</append>
+	<append xpath="/entity_classes/entity_class[@name='zombieInmate']">
 		<drop event="Harvest" name="clothingOutfitT1" tag="butcherHarvest" count="1" prob="0.10"/>
+		<drop event="Harvest" name="resourceCloth" tag="butcherHarvest" count="5" prob="0.50"/>
+	</append>
+	<append xpath="/entity_classes/entity_class[@name='zombieFatHawaiian']">
+		<drop event="Harvest" name="clothingOutfitT1" tag="butcherHarvest" count="1" prob="0.10"/>
+		<drop event="Harvest" name="resourceCloth" tag="butcherHarvest" count="4" prob="0.40"/>
 	</append>
 </configs>
